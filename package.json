@@ -1,0 +1,35 @@
+{
+  "name": "sl-nic-validator-and-information-extractor",
+  "version": "1.0.0",
+  "description": "A function to validate new and old NIC of Sri Lanka and a function to extract information from the NIC",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jayarajrohan/sl-nic-validator-and-information-extractor.git"
+  },
+  "keywords": [
+    "SL NIC Validation",
+    "Validation",
+    "SL NIC Information Extractor",
+    "SL NIC Information",
+    "NIC"
+  ],
+  "author": "rohan_jayaraj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jayarajrohan/sl-nic-validator-and-information-extractor/issues"
+  },
+  "homepage": "https://github.com/jayarajrohan/sl-nic-validator-and-information-extractor#readme",
+  "devDependencies": {
+    "typescript": "^5.4.2",
+    "tsup": "^8.0.2"
+  }
+}
