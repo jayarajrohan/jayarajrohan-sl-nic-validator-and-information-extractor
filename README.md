@@ -4,11 +4,13 @@ This package provides functions for validating Sri Lankan National Identity Card
 
 ## Installation
 
-Install the package using npm or yarn:
+Install the package using npm:
 
 ```sh
 npm install sl-nic-validator-and-information-extractor
 ```
+
+or yarn:
 
 ```sh
 yarn add sl-nic-validator-and-information-extractor
