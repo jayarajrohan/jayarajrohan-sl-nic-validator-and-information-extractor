@@ -23,7 +23,7 @@ yarn add sl-nic-validator-and-information-extractor
 The isValidSlNic function validates the format and structure of a given NIC number.
 
 ```javascript
-import { isValidSlNic } from "sl-nic-validator";
+import { isValidSlNic } from "sl-nic-validator-and-information-extractor";
 
 const nic = "971902662V"; // Example NIC
 const isValid = isValidSlNic(nic);
@@ -40,7 +40,7 @@ if (isValid) {
 The extractDetailsFromSlNic function takes a valid NIC number and returns an object containing the extracted information:
 
 ```javascript
-import { extractDetailsFromSlNic } from "sl-nic-validator";
+import { extractDetailsFromSlNic } from "sl-nic-validator-and-information-extractor";
 
 const nic = "971902662V"; // Example NIC
 const nicDetails = extractDetailsFromSlNic(nic);
