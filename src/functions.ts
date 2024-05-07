@@ -1,6 +1,16 @@
 import { INicDetails } from "./types";
 
-export function isValidSlNic(nic: string) {
+function isProvidedStringANumber(value: string): boolean {
+  const regex = /^-?\d+\.?\d*$/;
+
+  if (regex.test(value)) {
+    return true;
+  }
+
+  return false;
+}
+
+export function isValidSlNic(nic: string): boolean {
   const length = nic.length;
 
   const firstDigit = nic.charAt(0);
@@ -10,11 +20,25 @@ export function isValidSlNic(nic: string) {
   const fifthDigit = nic.charAt(4);
   const sixthDigit = nic.charAt(5);
   const seventhDigit = nic.charAt(6);
+  const eighthDigit = nic.charAt(7);
+  const ninthDigit = nic.charAt(8);
   const tenthDigit = nic.charAt(9);
 
-  if (length !== 10 && length !== 12) {
-    return false;
-  } else if (length === 10) {
+  if (length === 10) {
+    if (
+      !isProvidedStringANumber(firstDigit) ||
+      !isProvidedStringANumber(secondDigit) ||
+      !isProvidedStringANumber(thirdDigit) ||
+      !isProvidedStringANumber(fourthDigit) ||
+      !isProvidedStringANumber(fifthDigit) ||
+      !isProvidedStringANumber(sixthDigit) ||
+      !isProvidedStringANumber(seventhDigit) ||
+      !isProvidedStringANumber(eighthDigit) ||
+      !isProvidedStringANumber(ninthDigit)
+    ) {
+      return false;
+    }
+
     if (
       firstDigit !== "2" &&
       firstDigit !== "3" &&
@@ -26,7 +50,9 @@ export function isValidSlNic(nic: string) {
       firstDigit !== "9"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       thirdDigit !== "1" &&
       thirdDigit !== "2" &&
       thirdDigit !== "3" &&
@@ -56,7 +82,9 @@ export function isValidSlNic(nic: string) {
       fifthDigit !== "9"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       thirdDigit !== "0" &&
       thirdDigit !== "1" &&
       thirdDigit !== "2" &&
@@ -67,7 +95,9 @@ export function isValidSlNic(nic: string) {
       thirdDigit !== "8"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       thirdDigit !== "0" &&
       thirdDigit !== "1" &&
       thirdDigit !== "2" &&
@@ -83,7 +113,9 @@ export function isValidSlNic(nic: string) {
       fourthDigit !== "6"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       thirdDigit !== "0" &&
       thirdDigit !== "1" &&
       thirdDigit !== "2" &&
@@ -108,7 +140,9 @@ export function isValidSlNic(nic: string) {
       fifthDigit !== "6"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       thirdDigit !== "0" &&
       thirdDigit !== "1" &&
       thirdDigit !== "2" &&
@@ -136,24 +170,52 @@ export function isValidSlNic(nic: string) {
       fifthDigit !== "9"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       tenthDigit !== "x" &&
       tenthDigit !== "X" &&
       tenthDigit !== "v" &&
       tenthDigit !== "V"
     ) {
       return false;
-    } else {
-      return true;
     }
-  } else if (length === 12) {
+
+    return true;
+  }
+
+  if (length === 12) {
+    const eleventhDigit = nic.charAt(10);
+    const twelfthDigit = nic.charAt(11);
+    if (
+      !isProvidedStringANumber(firstDigit) ||
+      !isProvidedStringANumber(secondDigit) ||
+      !isProvidedStringANumber(thirdDigit) ||
+      !isProvidedStringANumber(fourthDigit) ||
+      !isProvidedStringANumber(fifthDigit) ||
+      !isProvidedStringANumber(sixthDigit) ||
+      !isProvidedStringANumber(seventhDigit) ||
+      !isProvidedStringANumber(eighthDigit) ||
+      !isProvidedStringANumber(ninthDigit) ||
+      !isProvidedStringANumber(eleventhDigit) ||
+      !isProvidedStringANumber(twelfthDigit)
+    ) {
+      return false;
+    }
+
     if (firstDigit !== "1" && firstDigit !== "2") {
       return false;
-    } else if (firstDigit === "1" && secondDigit !== "9") {
+    }
+
+    if (firstDigit === "1" && secondDigit !== "9") {
       return false;
-    } else if (firstDigit === "2" && secondDigit !== "0") {
+    }
+
+    if (firstDigit === "2" && secondDigit !== "0") {
       return false;
-    } else if (
+    }
+
+    if (
       firstDigit !== "2" &&
       secondDigit !== "0" &&
       secondDigit !== "1" &&
@@ -174,7 +236,9 @@ export function isValidSlNic(nic: string) {
       thirdDigit !== "9"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       firstDigit !== "1" &&
       secondDigit !== "1" &&
       secondDigit !== "2" &&
@@ -188,7 +252,9 @@ export function isValidSlNic(nic: string) {
       thirdDigit !== "0"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       fifthDigit !== "1" &&
       fifthDigit !== "2" &&
       fifthDigit !== "3" &&
@@ -218,7 +284,9 @@ export function isValidSlNic(nic: string) {
       seventhDigit !== "9"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       fifthDigit !== "0" &&
       fifthDigit !== "1" &&
       fifthDigit !== "2" &&
@@ -229,7 +297,9 @@ export function isValidSlNic(nic: string) {
       fifthDigit !== "8"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       fifthDigit !== "0" &&
       fifthDigit !== "1" &&
       fifthDigit !== "2" &&
@@ -245,7 +315,9 @@ export function isValidSlNic(nic: string) {
       sixthDigit !== "6"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       fifthDigit !== "0" &&
       fifthDigit !== "1" &&
       fifthDigit !== "2" &&
@@ -270,7 +342,9 @@ export function isValidSlNic(nic: string) {
       seventhDigit !== "6"
     ) {
       return false;
-    } else if (
+    }
+
+    if (
       fifthDigit !== "0" &&
       fifthDigit !== "1" &&
       fifthDigit !== "2" &&
@@ -298,10 +372,12 @@ export function isValidSlNic(nic: string) {
       seventhDigit !== "9"
     ) {
       return false;
-    } else {
-      return true;
     }
+
+    return true;
   }
+
+  return false;
 }
 
 export function extractDetailsFromSlNic(nic: string): INicDetails | undefined {
