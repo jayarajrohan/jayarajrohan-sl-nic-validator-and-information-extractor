@@ -197,6 +197,7 @@ export function isValidSlNic(nic: string): boolean {
       !isProvidedStringANumber(seventhDigit) ||
       !isProvidedStringANumber(eighthDigit) ||
       !isProvidedStringANumber(ninthDigit) ||
+      !isProvidedStringANumber(tenthDigit) ||
       !isProvidedStringANumber(eleventhDigit) ||
       !isProvidedStringANumber(twelfthDigit)
     ) {
